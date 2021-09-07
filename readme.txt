@@ -1,3 +1,5 @@
+config.py nastaviť a nakopírovať do priečinka s programom
+
 Spúšťanie cez python interpretter:
 1. Inštalácia python interpretteru z https://www.python.org/downloads/windows/
 2. Inštalácia potrebných knižníc cez cmd: 
