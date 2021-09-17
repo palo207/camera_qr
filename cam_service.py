@@ -91,6 +91,7 @@ while True:
                 
                 # Precita data z barkodu
                 barcodeData = barcode.data.decode("utf-8")
+                print("Data z barkodu: {}".format(barcodeData))
                 barcodes_in_order.append([y_max[0],x_max[0],barcodeData])
             
             if barcodes_in_order:
