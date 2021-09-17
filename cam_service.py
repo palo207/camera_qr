@@ -48,7 +48,7 @@ def f_handle_exception(e):
     if os.stat(r"log.txt").st_size > 500000000:
         log.truncate(0)
     log_date = datetime.now()
-    log.write("{} {} {} {} \n\n".format(log_date,e))
+    log.write("{} {} \n\n".format(log_date,e))
     log.close()
     return 0
 
