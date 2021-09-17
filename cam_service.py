@@ -19,7 +19,8 @@ from config import (cam_IP,
                     username,
                     password,
                     path_write,
-                    separator)
+                    separator,
+                    path_log)
 cam = None
 
 # Pripojenie na kameru
@@ -44,8 +45,8 @@ def check_camera_connection(camera_object):
 
 # Zápis chýb do logu
 def f_handle_exception(e):
-    log = open('log.txt','a+')
-    if os.stat(r"log.txt").st_size > 500000000:
+    log = open(path_log,'a+')
+    if os.stat(path_log).st_size > 500000000:
         log.truncate(0)
     log_date = str(datetime.now())
     log.write("{} {} \n\n".format(log_date,e))
@@ -102,6 +103,9 @@ while True:
                 write_data_into_file(barcodes_in_order)
         
         except Exception as e:
-            f_handle_exception(e)
+            try:
+                f_handle_exception(e)
+            except:
+                pass
             
             
