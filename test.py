@@ -14,7 +14,6 @@ barcodes_in_order.append([100,10,'barcode1'])
 
 
 barcodes_in_order = sorted(barcodes_in_order, key=itemgetter(0))
-print(type(barcodes_in_order))
 if barcodes_in_order:
     barcodes_in_order = [x[2] for x in barcodes_in_order]
     write_time = str(datetime.now())
