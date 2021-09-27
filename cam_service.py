@@ -46,7 +46,7 @@ def check_camera_connection(camera_object):
 # Zápis chýb do logu
 def f_handle_exception(e):
     log = open(path_log,'a+')
-    if os.stat(path_log).st_size > 500000000:
+    if os.stat(path_log).st_size > 50000000:
         log.truncate(0)
     log_date = str(datetime.now())
     log.write("{} {} \n\n".format(log_date,e))
@@ -68,6 +68,8 @@ while True:
     else:
         try:
             _, image = cam.read()
+            if image == None:
+                cam = None
             barcodes = pyzbar.decode(image) # Najde barkody
             barcodes_in_order=[] 
             for barcode in barcodes:
