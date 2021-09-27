@@ -70,6 +70,7 @@ while True:
             _, image = cam.read()
             if image == None:
                 cam = None
+                print("Camera disconnected")
             barcodes = pyzbar.decode(image) # Najde barkody
             barcodes_in_order=[] 
             for barcode in barcodes:
